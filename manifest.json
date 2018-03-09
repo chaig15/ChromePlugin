@@ -7,9 +7,15 @@
   
     "browser_action": {
       "default_icon": "icon.png",
-      "default_popup": "popup.html"
+      "default_popup": "popup.html",
+      "default_title": "Open a set of tabs in an interest Area!"
     },
+    "background": {
+        "scripts": ["eventPage.ts"],
+        "persistent": false
+      },
     "permissions": [
       "activeTab"
     ]
+    
   }
