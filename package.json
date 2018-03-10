@@ -1,0 +1,15 @@
+{
+  "name": "chrome-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chaitanya and Ashish!",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "0.0.60",
+    "@types/node": "^9.3.0"
+  }
+}
