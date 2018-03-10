@@ -15,6 +15,31 @@
 //       }, 750);
 //     });
 //   }
+function save_options() {
+    $(document).ready(function () {
+        $('textarea').each(function () {
+            var storageID = this.id;
+            chrome.storage.local.set((_a = {},
+                _a[storageID] = this.value,
+                _a), function () {
+                var status = document.getElementById('status');
+                status.textContent = 'Options saved.';
+                setTimeout(function () {
+                    status.textContent = '';
+                }, 1000);
+            });
+            var _a;
+        });
+    });
+}
+function restore_options() {
+    chrome.storage.local.get(null, function (items) {
+        for (var item in items) {
+            console.log(items[item]);
+            document.getElementById(item).value = items[item];
+        }
+    });
+}
 //   // Restores select box and checkbox state using the preferences
 //   // stored in chrome.storage.
 //   function restore_options() : void {
@@ -26,8 +51,12 @@
 //         (<HTMLInputElement>document.getElementById('color')).value = items.favoriteColor;
 //     });
 //   }
-// document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click', function () {
-    document.getElementsByName("social")[0].textContent = "hello";
-});
+// document.getElementById('save').addEventListener('click', () => {
+//   document.getElementsByName("social")[0].textContent = "hello"
+//   let text1 = (<HTMLInputElement>document.getElementById('sports')).value;     
+//document.getElementById('myTextArea').value = 'new value';
+//   alert(text1);
+// });
+document.addEventListener('DOMContentLoaded', restore_options);
+document.getElementById('save').addEventListener('click', save_options);
 //# sourceMappingURL=options.js.map
