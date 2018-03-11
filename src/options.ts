@@ -37,7 +37,6 @@ function save_options(): void {
 function restore_options(): void {
   chrome.storage.local.get(null, function(items) {
       for (let item in items) {
-        console.log(items[item]);
         (<HTMLInputElement>document.getElementById(item)).value = items[item];
       }
   });
