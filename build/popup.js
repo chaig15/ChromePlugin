@@ -25,5 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdown.addEventListener('change', function () {
         OpenTab(dropdown);
     });
+    document.getElementById('options').addEventListener('click', function () {
+        chrome.tabs.create({
+            url: "chrome-extension://ggijljlhebiakhajciamlpchenmnlhed/options.html"
+        });
+    });
 });
 //# sourceMappingURL=popup.js.map

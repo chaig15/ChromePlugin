@@ -25,4 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown.addEventListener('change', () => {
         OpenTab(dropdown);  
     });
+    document.getElementById('options').addEventListener('click', () => {
+        chrome.tabs.create({
+            url: "chrome-extension://ggijljlhebiakhajciamlpchenmnlhed/options.html"
+        })
+    });
 });
