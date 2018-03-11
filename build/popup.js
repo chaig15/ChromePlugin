@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('options').addEventListener('click', function () {
         chrome.tabs.create({
-            url: "chrome-extension://ggijljlhebiakhajciamlpchenmnlhed/options.html"
+            url: "chrome-extension://" + chrome.runtime.id + "/options.html"
         });
     });
 });
